@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: 'npm'
+          # cache: 'npm'
       - name: Install bun
         run: npm install -g bun
       - name: Install dependencies
