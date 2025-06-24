@@ -61,7 +61,7 @@ const Header: FC = () => {
         <Tooltip title="Report a bug">
           <IconButton
             component="a"
-            href="https://github.com/SrJuggernaut/character-tools/issues"
+            href="https://github.com/jabelardo/character-tools/issues"
             target="_blank"
           >
             <FontAwesomeIcon

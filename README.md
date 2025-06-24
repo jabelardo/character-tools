@@ -40,4 +40,4 @@ Also known as LoreBooks or Worldbooks, these are collections of knowledge that c
 Right now I don't have any plans to add new features, but I'm open to suggestions and feedback.
 
 > [!NOTE]
-> Originally I was planning to add more features to give better support for Specific Tools, but now I don't think it is necessary to do so.
+> This staerted as a fork of [@SrJuggernaut/character-tools](https://github.com/SrJuggernaut/character-tools)
