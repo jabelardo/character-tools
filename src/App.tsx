@@ -15,7 +15,10 @@ const router = createBrowserRouter([
   { path: '/characterbook-editor', element: <CharacterBookEditorPage /> },
   { path: '/characterbook-library', element: <CharacterBookLibrary /> },
   { path: '/manage-database', element: <ManageDatabase /> }
-])
+],
+{
+  basename: '/character-tools' // Set the base path for the router
+})
 
 const App: FC = () => {
   return <RouterProvider router={router} />

@@ -78,24 +78,13 @@ export const extractCharacterData = async (
   }
 }
 
-export const FileToCharacterEditorState = async (
-  file: File
-): Promise<CharacterEditorState> => {
-  const extracted = await extractCharacterData(file)
-  
-  const image =
-    extracted.image !== undefined
-      ? await imageToPng(extracted.image)
-      : undefined
-
-  const data = {character: extracted.character, image}
-
-  return importedToCharacterEditorState(data)
-}
-
-export const importedToCharacterEditorState = (
+export const importedToCharacterEditorState = async (
   data: ExtractCharacterDataReturn
-): CharacterEditorState => {
+): Promise<CharacterEditorState> => {
+  const image =
+  data.image !== undefined
+    ? await imageToPng(data.image)
+    : undefined
   const v2 = data.character.toSpecV2()
   const c = v2.data
   return {
@@ -114,7 +103,7 @@ export const importedToCharacterEditorState = (
     post_history_instructions: c.post_history_instructions,
     character_book: undefined,
     extensions: c.extensions,
-    image: data.image
+    image
   }
 }
 

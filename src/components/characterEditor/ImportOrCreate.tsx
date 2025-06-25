@@ -27,7 +27,7 @@ const ImportOrCreate: FC = () => {
   const handleImport = useCallback(
     async (file: File): Promise<CharacterEditorState> => {
       const extracted = await extractCharacterData(file)
-      const character = importedToCharacterEditorState(extracted)
+      const character = await importedToCharacterEditorState(extracted)
       const characterBook = extractCharacterBookFromCharacter(
         extracted.character
       )

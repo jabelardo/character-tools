@@ -61,7 +61,7 @@ const ImportCharacter: FC = () => {
     if (processingFile !== undefined) {
       extractCharacterData(processingFile)
         .then(async (extracted) => {
-          const characterEditorState = importedToCharacterEditorState(extracted)
+          const characterEditorState = await importedToCharacterEditorState(extracted)
           const characterBook = extractCharacterBookFromCharacter(
             extracted.character
           )
