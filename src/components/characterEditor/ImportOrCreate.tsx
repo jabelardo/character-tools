@@ -31,7 +31,7 @@ const ImportOrCreate: FC = () => {
       const characterBook = extractCharacterBookFromCharacter(
         extracted.character
       )
-      if (!characterBook) {
+      if (characterBook !== undefined && characterBook !== null) {
         const characterBookEditor
           = characterBookToCharacterEditor(characterBook)
         dispatch(
