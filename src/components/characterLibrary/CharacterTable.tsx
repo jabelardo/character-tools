@@ -61,8 +61,8 @@ const CharacterTable: FC = () => {
   const characters = useLiveQuery(async () => {
     setIsLoading(true)
     const characters = dataBase.characters
-    const sortedCharacters =
-      sortModel.length === 0
+    const sortedCharacters
+      = sortModel.length === 0
         ? characters.toCollection()
         : sortModel[0].sort === 'asc'
           ? characters.orderBy(sortModel[0].field)
@@ -134,8 +134,8 @@ const CharacterTable: FC = () => {
     return charactersArray
   }, [paginationModel, sortModel, filterModel])
 
-  const renderActions: GridActionsColDef<CharacterDatabaseData>['getActions'] =
-    useCallback(
+  const renderActions: GridActionsColDef<CharacterDatabaseData>['getActions']
+    = useCallback(
       (params) => [
         <Tooltip
           key={`edit-${params.row.id}`}

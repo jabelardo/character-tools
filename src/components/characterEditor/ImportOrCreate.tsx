@@ -31,9 +31,9 @@ const ImportOrCreate: FC = () => {
       const characterBook = extractCharacterBookFromCharacter(
         extracted.character
       )
-      if (characterBook !== undefined) {
-        const characterBookEditor =
-          characterBookToCharacterEditor(characterBook)
+      if (!characterBook) {
+        const characterBookEditor
+          = characterBookToCharacterEditor(characterBook)
         dispatch(
           setDialog({
             title: 'Import CharacterBook',
@@ -97,7 +97,7 @@ const ImportOrCreate: FC = () => {
         )
       }
       return {
-        ...character,
+        ...character
       }
     },
     []
@@ -141,11 +141,7 @@ const ImportOrCreate: FC = () => {
 
   return (
     <>
-      <Typography
-        variant="h2"
-        align="center"
-        gutterBottom
-      >
+      <Typography variant="h2" align="center" gutterBottom>
         Import or Create
       </Typography>
       <Box
@@ -170,28 +166,14 @@ const ImportOrCreate: FC = () => {
               multiple: false
             }}
           >
-            <FontAwesomeIcon
-              icon={faFileUpload}
-              size="3x"
-            />
-            <Typography
-              variant="body1"
-              align="center"
-              gutterBottom
-            >
+            <FontAwesomeIcon icon={faFileUpload} size="3x" />
+            <Typography variant="body1" align="center" gutterBottom>
               Drag &amp; drop your character file here, or click to select file
             </Typography>
-            <Typography
-              variant="caption"
-              align="center"
-              gutterBottom
-            >
+            <Typography variant="caption" align="center" gutterBottom>
               Supported file types: .png, .webp, .json
             </Typography>
-            <Button
-              variant="contained"
-              color="primary"
-            >
+            <Button variant="contained" color="primary">
               Upload
             </Button>
           </Drop>

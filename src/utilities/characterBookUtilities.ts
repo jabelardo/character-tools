@@ -11,8 +11,8 @@ export const extractCharacterBookFromCharacter = (
 export const characterBookToCharacterEditor = (
   characterBook: CharacterSpec.CharacterBook
 ): CharacterBookEditorState => {
-    const entries: CharacterBookEditorState['entries'] =
-    characterBook.entries.map((entry) => ({
+  const entries: CharacterBookEditorState['entries']
+    = characterBook.entries.map((entry) => ({
       ...entry,
       position: entry.position ?? 'before_char',
       enabled: entry.enabled ?? true,
@@ -32,7 +32,6 @@ export const characterBookToCharacterEditor = (
 export const characterEditorToCharacterBook = (
   characterEditor: CharacterBookEditorState
 ): CharacterSpec.CharacterBook => {
-
   const entries: CharacterSpec.Entry[] = characterEditor.entries.map((ent) => {
     const ext = ent.extensions
     const extensions = {
@@ -43,11 +42,11 @@ export const characterEditorToCharacterBook = (
       useProbability: ext.useProbability as boolean,
       depth: ext.depth as number,
       selectiveLogic: ext.selectiveLogic as number,
-      group: ext.group  as string,
+      group: ext.group as string,
       group_override: ext.group_override as boolean,
-      group_weight: ext.group_weight  as number,
-      prevent_recursion: ext.prevent_recursion  as boolean,
-      delay_until_recursion: ext.delay_until_recursion  as boolean,
+      group_weight: ext.group_weight as number,
+      prevent_recursion: ext.prevent_recursion as boolean,
+      delay_until_recursion: ext.delay_until_recursion as boolean,
       scan_depth: ext.scan_depth,
       match_whole_words: ext.match_whole_words,
       use_group_scoring: ext.use_group_scoring as boolean,
@@ -56,14 +55,14 @@ export const characterEditorToCharacterBook = (
       role: ext.role as number,
       vectorized: ext.vectorized as boolean,
       sticky: ext.sticky as number,
-      cooldown: ext.cooldown  as number,
-      delay: ext.delay  as number,
+      cooldown: ext.cooldown as number,
+      delay: ext.delay as number,
       match_persona_description: ext.match_persona_description as boolean,
       match_character_description: ext.match_character_description as boolean,
       match_character_personality: ext.match_character_personality as boolean,
       match_character_depth_prompt: ext.match_character_depth_prompt as boolean,
       match_scenario: ext.match_scenario as boolean,
-      match_creator_notes: ext.match_creator_notes  as boolean
+      match_creator_notes: ext.match_creator_notes as boolean
     }
     return {
       id: ent.id ?? 0,

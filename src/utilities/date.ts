@@ -7,9 +7,9 @@ export const replaceDateInTemplate = (template: string): string => {
   )
   dateMatches.forEach((match) => {
     const completeMatch = match[0]
-    const currentFormat =
-      match.groups?.currentFormat !== undefined &&
-      match.groups?.currentFormat !== ''
+    const currentFormat
+      = match.groups?.currentFormat !== undefined
+        && match.groups?.currentFormat !== ''
         ? match.groups?.currentFormat
         : 'yyyy-MM-dd-HH-mm'
     const date = new Date()

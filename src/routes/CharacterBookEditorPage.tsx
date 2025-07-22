@@ -15,11 +15,11 @@ import { Box, Tab, type Theme, Typography, useMediaQuery } from '@mui/material'
 import { type FC, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
-type tabs =
-  | 'import-create'
-  | 'characterbook-data'
-  | 'entries'
-  | 'export-or-save'
+type tabs
+  = | 'import-create'
+    | 'characterbook-data'
+    | 'entries'
+    | 'export-or-save'
 
 const CharacterBookEditorPage: FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -32,10 +32,10 @@ const CharacterBookEditorPage: FC = () => {
     if (searchParams.has('tab')) {
       const tab = searchParams.get('tab')
       if (
-        tab === 'import-create' ||
-        tab === 'characterbook-data' ||
-        tab === 'entries' ||
-        tab === 'export-or-save'
+        tab === 'import-create'
+        || tab === 'characterbook-data'
+        || tab === 'entries'
+        || tab === 'export-or-save'
       ) {
         setCurrentTab(tab)
       }

@@ -78,16 +78,18 @@ const EntriesEditor: FC = () => {
                       ? `Unnamed entry ${index + 1}`
                       : entry.name}
                   </Typography>
-                  {entry.comment !== undefined || entry.comment !== '' ? (
-                    <Typography variant="body1">{entry.comment}</Typography>
-                  ) : (
-                    <Typography
-                      variant="body1"
-                      color="text.secondary"
-                    >
-                      No comment
-                    </Typography>
-                  )}
+                  {entry.comment !== undefined || entry.comment !== ''
+                    ? (
+                        <Typography variant="body1">{entry.comment}</Typography>
+                      )
+                    : (
+                        <Typography
+                          variant="body1"
+                          color="text.secondary"
+                        >
+                          No comment
+                        </Typography>
+                      )}
                 </div>
                 <div>
                   <IconButton

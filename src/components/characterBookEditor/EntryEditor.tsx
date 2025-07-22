@@ -115,7 +115,7 @@ const EntryEditor: FC<EntryEditorProps> = ({ onChange, value }) => {
         }}
       >
         <FormControlLabel
-          control={
+          control={(
             <Checkbox
               checked={value.enabled}
               onChange={(e) => {
@@ -123,11 +123,11 @@ const EntryEditor: FC<EntryEditorProps> = ({ onChange, value }) => {
               }}
               name="enabled"
             />
-          }
+          )}
           label="Enabled"
         />
         <FormControlLabel
-          control={
+          control={(
             <Checkbox
               checked={value.case_sensitive ?? false}
               onChange={(e) => {
@@ -135,11 +135,11 @@ const EntryEditor: FC<EntryEditorProps> = ({ onChange, value }) => {
               }}
               name="case_sensitive"
             />
-          }
+          )}
           label="Case Sensitive"
         />
         <FormControlLabel
-          control={
+          control={(
             <Checkbox
               checked={value.selective ?? false}
               onChange={(e) => {
@@ -147,11 +147,11 @@ const EntryEditor: FC<EntryEditorProps> = ({ onChange, value }) => {
               }}
               name="selective"
             />
-          }
+          )}
           label="Selective"
         />
         <FormControlLabel
-          control={
+          control={(
             <Checkbox
               checked={value.constant ?? false}
               onChange={(e) => {
@@ -159,7 +159,7 @@ const EntryEditor: FC<EntryEditorProps> = ({ onChange, value }) => {
               }}
               name="constant"
             />
-          }
+          )}
           label="Constant"
         />
       </FormGroup>

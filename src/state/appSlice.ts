@@ -4,19 +4,19 @@ import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
 const initialState: AppState = {
   theme: (window.localStorage.getItem('theme') as AppState['theme']) ?? 'dark',
   tokenizer:
-    (window.localStorage.getItem('tokenizer') as AppState['tokenizer']) ??
-    'llama',
+    (window.localStorage.getItem('tokenizer') as AppState['tokenizer'])
+    ?? 'llama',
   openSettings: false,
   characterCardExportNameTemplate:
     (window.localStorage.getItem(
       'characterCardExportNameTemplate'
-    ) as AppState['characterCardExportNameTemplate']) ??
-    '{{name}}-spec{{spec}}',
+    ) as AppState['characterCardExportNameTemplate'])
+    ?? '{{name}}-spec{{spec}}',
   characterBookExportNameTemplate:
     (window.localStorage.getItem(
       'characterBookExportNameTemplate'
-    ) as AppState['characterBookExportNameTemplate']) ??
-    '{{name}}-characterBook'
+    ) as AppState['characterBookExportNameTemplate'])
+    ?? '{{name}}-characterBook'
 }
 
 const appSlice = createSlice({

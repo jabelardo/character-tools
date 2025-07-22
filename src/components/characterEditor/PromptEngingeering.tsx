@@ -80,74 +80,76 @@ const PromptEngingeering: FC = () => {
         fullWidth
         margin="normal"
       />
-      {characterBooks === undefined ? (
-        <Typography
-          variant="body1"
-          gutterBottom
-        >
-          Loading character books...
-        </Typography>
-      ) : (
-        <Autocomplete
-          value={
-            characterEditorState.character_book === undefined
-              ? null
-              : characterBooks?.find(
+      {characterBooks === undefined
+        ? (
+            <Typography
+              variant="body1"
+              gutterBottom
+            >
+              Loading character books...
+            </Typography>
+          )
+        : (
+            <Autocomplete
+              value={
+                characterEditorState.character_book === undefined
+                  ? null
+                  : characterBooks?.find(
                     (characterBook) =>
-                      characterBook.value ===
-                      characterEditorState.character_book
+                      characterBook.value
+                      === characterEditorState.character_book
                   ) !== undefined
-                ? characterBooks?.find(
-                    (characterBook) =>
-                      characterBook.value ===
-                      characterEditorState.character_book
-                  )
-                : {
-                    label: 'Not Found',
-                    value: characterEditorState.character_book
+                    ? characterBooks?.find(
+                        (characterBook) =>
+                          characterBook.value
+                          === characterEditorState.character_book
+                      )
+                    : {
+                        label: 'Not Found',
+                        value: characterEditorState.character_book
+                      }
+              }
+              onChange={(_, value) => {
+                if (value !== null) {
+                  dispatch(updateCharacterEditor({ character_book: value.value }))
+                } else {
+                  dispatch(updateCharacterEditor({ character_book: undefined }))
+                }
+              }}
+              options={characterBooks ?? []}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  error={
+                    characterEditorState.character_book !== undefined
+                    && characterBooks?.find(
+                      (characterBook) =>
+                        characterBook.value === characterEditorState.character_book
+                    ) === undefined
                   }
-          }
-          onChange={(_, value) => {
-            if (value !== null) {
-              dispatch(updateCharacterEditor({ character_book: value.value }))
-            } else {
-              dispatch(updateCharacterEditor({ character_book: undefined }))
-            }
-          }}
-          options={characterBooks ?? []}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              error={
-                characterEditorState.character_book !== undefined &&
-                characterBooks?.find(
-                  (characterBook) =>
-                    characterBook.value === characterEditorState.character_book
-                ) === undefined
-              }
-              helperText={
-                characterEditorState.character_book !== undefined &&
-                characterBooks?.find(
-                  (characterBook) =>
-                    characterBook.value === characterEditorState.character_book
-                ) === undefined
-                  ? `Character Book with id ${characterEditorState.character_book} not found, please select a valid Character Book. Or to leave it empty, delete the value.`
-                  : undefined
-              }
-              label="Character Book"
-              margin="normal"
-              fullWidth
+                  helperText={
+                    characterEditorState.character_book !== undefined
+                    && characterBooks?.find(
+                      (characterBook) =>
+                        characterBook.value === characterEditorState.character_book
+                    ) === undefined
+                      ? `Character Book with id ${characterEditorState.character_book} not found, please select a valid Character Book. Or to leave it empty, delete the value.`
+                      : undefined
+                  }
+                  label="Character Book"
+                  margin="normal"
+                  fullWidth
+                />
+              )}
+              clearIcon={(
+                <FontAwesomeIcon
+                  icon={faTimes}
+                  size="xs"
+                  fixedWidth
+                />
+              )}
             />
           )}
-          clearIcon={
-            <FontAwesomeIcon
-              icon={faTimes}
-              size="xs"
-              fixedWidth
-            />
-          }
-        />
-      )}
       <ToolbarDial />
     </>
   )

@@ -32,19 +32,19 @@ const ToolbarDial = () => {
       ariaLabel="Character Data Toolbar"
       sx={{ position: 'fixed', bottom: 72 + 16, right: 16 }}
       FabProps={{ size: 'large' }}
-      icon={
+      icon={(
         <FontAwesomeIcon
           icon={faScrewdriverWrench}
           size="xl"
         />
-      }
+      )}
     >
       <SpeedDialAction
         classes={{ staticTooltipLabel: classes.tooltips }}
         tooltipTitle="Replace Name to {{char}}"
         tooltipOpen
         FabProps={{ size: 'medium' }}
-        icon={
+        icon={(
           <>
             <FontAwesomeIcon
               icon={faUser}
@@ -62,7 +62,7 @@ const ToolbarDial = () => {
               fixedWidth
             />
           </>
-        }
+        )}
         onClick={() => {
           const newEditorState = replaceName(characterEditorState)
           dispatch(updateCharacterEditor(newEditorState))
@@ -73,7 +73,7 @@ const ToolbarDial = () => {
         tooltipTitle="Replace {{char}} to Name"
         tooltipOpen
         FabProps={{ size: 'medium' }}
-        icon={
+        icon={(
           <>
             <FontAwesomeIcon
               icon={faUser}
@@ -91,7 +91,7 @@ const ToolbarDial = () => {
               fixedWidth
             />
           </>
-        }
+        )}
         onClick={() => {
           const newEditorState = replaceChar(characterEditorState)
           dispatch(updateCharacterEditor(newEditorState))

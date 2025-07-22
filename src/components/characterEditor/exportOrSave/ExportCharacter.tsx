@@ -24,8 +24,8 @@ const ExportCharacter: FC = () => {
   const characterCardExportNameTemplate = useAppSelector(
     (theme) => theme.app.characterCardExportNameTemplate
   )
-  const [openEditExportCharacterName, setOpenEditExportCharacterName] =
-    useState(false)
+  const [openEditExportCharacterName, setOpenEditExportCharacterName]
+    = useState(false)
 
   const handleDownload = (url: string, filename: string): void => {
     const link = document.createElement('a')

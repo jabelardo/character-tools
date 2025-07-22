@@ -17,12 +17,12 @@ import { Box, Tab, type Theme, Typography, useMediaQuery } from '@mui/material'
 import { type FC, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
-type tabs =
-  | 'import-create'
-  | 'character-data'
-  | 'character-metadata'
-  | 'prompt-engineering'
-  | 'export-or-save'
+type tabs
+  = | 'import-create'
+    | 'character-data'
+    | 'character-metadata'
+    | 'prompt-engineering'
+    | 'export-or-save'
 
 const CharacterEditorPage: FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -35,11 +35,11 @@ const CharacterEditorPage: FC = () => {
     if (searchParams.has('tab')) {
       const tab = searchParams.get('tab')
       if (
-        tab === 'import-create' ||
-        tab === 'character-data' ||
-        tab === 'character-metadata' ||
-        tab === 'prompt-engineering' ||
-        tab === 'export-or-save'
+        tab === 'import-create'
+        || tab === 'character-data'
+        || tab === 'character-metadata'
+        || tab === 'prompt-engineering'
+        || tab === 'export-or-save'
       ) {
         setCurrentTab(tab)
       }

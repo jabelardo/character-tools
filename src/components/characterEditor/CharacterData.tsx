@@ -107,13 +107,13 @@ const CharacterData: FC = () => {
         label="Message Example"
         value={characterEditorState.mes_example}
         onChange={handleChange}
-        helperText={
+        helperText={(
           <>
             Describes how the character speaks. Before each example, you need to
             add the <CopyButton textToCopy="<START>">&lt;START&gt;</CopyButton>{' '}
             macro.
           </>
-        }
+        )}
         multiline
         minRows={3}
         variant="outlined"
@@ -156,8 +156,8 @@ const CharacterData: FC = () => {
         You can add as many alternative greetings as you wish to your character.
         These greetings will be used as alternatives to the First Message.
       </Typography>
-      {characterEditorState.alternate_greetings.length > 0 &&
-        characterEditorState.alternate_greetings.map((greeting, index) => (
+      {characterEditorState.alternate_greetings.length > 0
+        && characterEditorState.alternate_greetings.map((greeting, index) => (
           <TextFieldWithTokenCounter
             key={`alternate_greeting_${index}`}
             id={`alternate_greeting[${index}]`}

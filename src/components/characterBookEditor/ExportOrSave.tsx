@@ -35,8 +35,8 @@ const ExportOrSave: FC = () => {
   const characterBookExportNameTemplate = useAppSelector(
     (theme) => theme.app.characterBookExportNameTemplate
   )
-  const [openEditExportCharacterBookName, setOpenEditExportCharacterBookName] =
-    useState(false)
+  const [openEditExportCharacterBookName, setOpenEditExportCharacterBookName]
+    = useState(false)
 
   const handleCreate = useCallback(
     async (
@@ -298,8 +298,8 @@ const ExportOrSave: FC = () => {
             type="button"
             variant="contained"
             onClick={() => {
-              const CharacterBook =
-                characterEditorToCharacterBook(characterBookEditor)
+              const CharacterBook
+                = characterEditorToCharacterBook(characterBookEditor)
               const JSONUrl = characterBookToJSONUrl(CharacterBook)
               const fileName = getCharacterBookExportName(
                 characterBookExportNameTemplate,

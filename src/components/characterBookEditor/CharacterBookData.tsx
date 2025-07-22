@@ -102,7 +102,7 @@ const CharacterBookData: FC = () => {
       />
       <FormGroup>
         <FormControlLabel
-          control={
+          control={(
             <Checkbox
               id="recursive_scan"
               checked={characterEditorState.recursive_scanning}
@@ -112,7 +112,7 @@ const CharacterBookData: FC = () => {
                 )
               }}
             />
-          }
+          )}
           label="Recursive Scan"
         />
         <FormHelperText>

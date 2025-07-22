@@ -23,8 +23,8 @@ const SaveCharacter: FC = () => {
       return
     }
     if (
-      characterEditor.description === undefined ||
-      characterEditor.description === ''
+      characterEditor.description === undefined
+      || characterEditor.description === ''
     ) {
       dispatch(
         setAlert({
@@ -68,8 +68,8 @@ const SaveCharacter: FC = () => {
       return
     }
     if (
-      characterEditor.description === undefined ||
-      characterEditor.description === ''
+      characterEditor.description === undefined
+      || characterEditor.description === ''
     ) {
       dispatch(
         setAlert({

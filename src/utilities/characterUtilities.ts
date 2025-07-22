@@ -49,9 +49,9 @@ export const extractCharacterData = async (
       const arrayBuffer = await file.arrayBuffer()
       const exifData = ExifReader.load(arrayBuffer)
       if (
-        exifData === undefined ||
-        exifData.UserComment === undefined ||
-        exifData.UserComment === null
+        exifData === undefined
+        || exifData.UserComment === undefined
+        || exifData.UserComment === null
       )
         throw new Error(
           'Invalid character card, Webp image does not contain metadata'
@@ -60,9 +60,9 @@ export const extractCharacterData = async (
       const userCommentValue = userComment.value as XmpTag[]
       const image = `data:image/webp;base64,${btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)))}`
       if (
-        userCommentValue !== undefined &&
-        userCommentValue.length === 1 &&
-        typeof userCommentValue[0] === 'string'
+        userCommentValue !== undefined
+        && userCommentValue.length === 1
+        && typeof userCommentValue[0] === 'string'
       ) {
         const charPreParse = userCommentValue[0]
         const jsonData = json5.parse(charPreParse)
@@ -81,8 +81,8 @@ export const extractCharacterData = async (
 export const importedToCharacterEditorState = async (
   data: ExtractCharacterDataReturn
 ): Promise<CharacterEditorState> => {
-  const image =
-  data.image !== undefined
+  const image
+  = data.image !== undefined
     ? await imageToPng(data.image)
     : undefined
   const v2 = data.character.toSpecV2()

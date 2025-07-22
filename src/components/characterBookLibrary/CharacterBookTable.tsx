@@ -34,8 +34,8 @@ const CharacterBookTable: FC = () => {
   const characterBooks = useLiveQuery(async () => {
     setIsLoading(true)
     const characterBooks = dataBase.characterBooks
-    const sortedCharacterBooks =
-      sortModel.length === 0
+    const sortedCharacterBooks
+      = sortModel.length === 0
         ? characterBooks.toCollection()
         : sortModel[0].sort === 'asc'
           ? characterBooks.orderBy(sortModel[0].field)
@@ -73,23 +73,23 @@ const CharacterBookTable: FC = () => {
             )
           case 'equals':
             return (
-              characterBook[fieldToFilter]?.toLowerCase() ===
-              filterValue.toLowerCase()
+              characterBook[fieldToFilter]?.toLowerCase()
+              === filterValue.toLowerCase()
             )
           case 'notEquals':
             return (
-              characterBook[fieldToFilter]?.toLowerCase() !==
-              filterValue.toLowerCase()
+              characterBook[fieldToFilter]?.toLowerCase()
+              !== filterValue.toLowerCase()
             )
           case 'is':
             return (
-              characterBook[fieldToFilter]?.toLowerCase() ===
-              filterValue.toLowerCase()
+              characterBook[fieldToFilter]?.toLowerCase()
+              === filterValue.toLowerCase()
             )
           case 'isNot':
             return (
-              characterBook[fieldToFilter]?.toLowerCase() !==
-              filterValue.toLowerCase()
+              characterBook[fieldToFilter]?.toLowerCase()
+              !== filterValue.toLowerCase()
             )
           default:
             return true
@@ -106,8 +106,8 @@ const CharacterBookTable: FC = () => {
     return paginatedCharacterBooks
   }, [paginationModel, filterModel, sortModel])
 
-  const renderActions: GridActionsColDef<CharacterBookDatabaseData>['getActions'] =
-    useCallback(
+  const renderActions: GridActionsColDef<CharacterBookDatabaseData>['getActions']
+    = useCallback(
       (params) => [
         <Tooltip
           key={`edit-${params.row.id}`}

@@ -45,14 +45,14 @@ export class CharacterToolsDatabase extends Dexie {
               )
             }
             // 3. Convert the character book to an editor state
-            const characterBookEditorState =
-              characterBookToCharacterEditor(characterBook)
+            const characterBookEditorState
+              = characterBookToCharacterEditor(characterBook)
             // 4. Generate an ID for the character book
             const characterBookId = nanoid()
             // 5. If the character book doesn't have a name, give it a default name
             if (
-              characterBookEditorState.name === undefined ||
-              characterBookEditorState.name === ''
+              characterBookEditorState.name === undefined
+              || characterBookEditorState.name === ''
             )
               characterBookEditorState.name = `Character Book for ${character.name as string}`
             // 6. Convert the editor state to a database-friendly format

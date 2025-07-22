@@ -26,7 +26,7 @@ const exampleCharacterObject: CharacterEditorState = {
   first_mes: 'Hello, {{user}}! How can I help you today?',
   alternate_greetings: [
     'Hello, {{user}}!',
-    "Hi, i'm {{char}}, your personal assistant."
+    'Hi, i\'m {{char}}, your personal assistant.'
   ],
   mes_example: `<START>
 {{char}}: Hello, {{user}}! How can I help you today?

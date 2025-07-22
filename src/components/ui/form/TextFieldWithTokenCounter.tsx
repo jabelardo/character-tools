@@ -23,7 +23,7 @@ const TextFieldWithTokenCounter: FC<TextFieldWithTokenCounterProps> = ({
     <TextField
       {...TextFieldProps}
       value={value}
-      label={
+      label={(
         <>
           {label}&nbsp;
           <Tooltip
@@ -37,7 +37,7 @@ const TextFieldWithTokenCounter: FC<TextFieldWithTokenCounterProps> = ({
             />
           </Tooltip>
         </>
-      }
+      )}
     />
   )
 }
