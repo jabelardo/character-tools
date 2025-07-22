@@ -37,7 +37,7 @@ Also known as LoreBooks or Worldbooks, these are collections of knowledge that c
 
 # Future Features
 
-Right now I don't have any plans to add new features, but I'm open to suggestions and feedback.
+Right now I'm mostly concerned in getting bugs busted and updating dependencies I don't have plans to add new features, though I want to improve the lorebook UI. But I'm open to suggestions and feedback.
 
 > [!NOTE]
 > This staerted as a fork of [@SrJuggernaut/character-tools](https://github.com/SrJuggernaut/character-tools)
